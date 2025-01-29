@@ -6,8 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.vittoassigment.mainflow.splash.ui.SplashScreen
 
-
-fun NavGraphBuilder.homeNavGraph(navController: NavController) {
+fun NavGraphBuilder.favouriteNavGraph(navController: NavController) {
     navigation(
         route = NavGraph.SPLASH,
         startDestination = SplashScreens.SplashScreen.route
@@ -18,7 +17,6 @@ fun NavGraphBuilder.homeNavGraph(navController: NavController) {
     }
 }
 
-sealed class HomeScreens(val route: String) {
-    data object HomeScreen : SplashScreens(route = "home_screen")
-    data object DetailsScreen : SplashScreens(route = "details_screen")
+sealed class FavouritesScreen(val route: String) {
+    data object FavouritesScreen : SplashScreens(route = "favourite_screen")
 }
