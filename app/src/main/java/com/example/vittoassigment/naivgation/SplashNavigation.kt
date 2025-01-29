@@ -18,6 +18,6 @@ fun NavGraphBuilder.splashNavGraph(navController: NavController) {
     }
 }
 
-sealed class SplashScreens(val route: String) {
+private sealed class SplashScreens(val route: String) {
     data object SplashScreen : SplashScreens(route = "splash_screen")
 }

@@ -4,19 +4,19 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.vittoassigment.mainflow.splash.ui.SplashScreen
+
 
 fun NavGraphBuilder.favouriteNavGraph(navController: NavController) {
     navigation(
-        route = NavGraph.SPLASH,
-        startDestination = SplashScreens.SplashScreen.route
+        route = NavGraph.FAVOURITES,
+        startDestination = FavouritesScreens.FavouritesScreen.route
     ) {
-        composable(route = SplashScreens.SplashScreen.route) {
-            SplashScreen(navController)
+        composable(route = FavouritesScreens.FavouritesScreen.route) {
+//            SplashScreen(navController)
         }
     }
 }
 
-sealed class FavouritesScreen(val route: String) {
-    data object FavouritesScreen : SplashScreens(route = "favourite_screen")
+private sealed class FavouritesScreens(val route: String) {
+    data object FavouritesScreen : FavouritesScreens(route = "favourite_screen")
 }

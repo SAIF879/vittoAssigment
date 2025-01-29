@@ -8,6 +8,7 @@ object NavGraph{
     const val ROOT = "root"
     const val SPLASH = "splash"
     const val HOME = "home"
+    const val FAVOURITES = "favourites"
 }
 
 @Composable

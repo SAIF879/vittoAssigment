@@ -4,21 +4,21 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.example.vittoassigment.mainflow.splash.ui.SplashScreen
 
 
 fun NavGraphBuilder.homeNavGraph(navController: NavController) {
     navigation(
-        route = NavGraph.SPLASH,
-        startDestination = SplashScreens.SplashScreen.route
+        route = NavGraph.HOME,
+        startDestination = HomeScreens.HomeScreen.route
     ) {
-        composable(route = SplashScreens.SplashScreen.route) {
-            SplashScreen(navController)
+        composable(route = HomeScreens.HomeScreen.route) {
+        }
+        composable(route = HomeScreens.DetailsScreen.route) {
         }
     }
 }
 
-sealed class HomeScreens(val route: String) {
-    data object HomeScreen : SplashScreens(route = "home_screen")
-    data object DetailsScreen : SplashScreens(route = "details_screen")
+private sealed class HomeScreens(val route: String) {
+    data object HomeScreen : HomeScreens(route = "home_screen")
+    data object DetailsScreen : HomeScreens(route = "details_screen")
 }
